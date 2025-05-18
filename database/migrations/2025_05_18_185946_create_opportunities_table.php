@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('events', function (Blueprint $table) {
+        Schema::create('opportunities', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('Event_Name');
-            $table->string('Event_Description');
-            $table->string('Event_Date');
+            $table->string('Title');
+            $table->string('Description');
+            $table->string('CompanyId');
+            $table->string('Required_Skills');
             $table->string('Location');
-            $table->string('organizer_CompanyID');
-            $table->string('Event_Logo');
+            $table->string('EmploymentType');//full-time,part-time,freelance
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('events');
+        Schema::dropIfExists('opportunities');
     }
 };

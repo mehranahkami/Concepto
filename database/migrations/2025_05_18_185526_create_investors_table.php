@@ -7,15 +7,17 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations
+     * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('investors', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('Category_Name');
-            $table->string('Category_Icon');
+            $table->string('Investor_Name');
+            $table->string('Investor_Phone');
+            $table->string('Investment_Amount');
+            $table->string('Focus_Industry');
         });
     }
 
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('investors');
     }
 };

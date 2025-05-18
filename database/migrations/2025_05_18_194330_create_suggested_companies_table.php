@@ -11,15 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('company_lists', function (Blueprint $table) {
+        Schema::create('suggested_companies', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name');
-            $table->string('description');
-            $table->string('website');
-            $table->string('category');
-            $table->string('logo');
-
+            $table->string('user_id');
+            $table->string('company_id');
+            $table->string('score');
+            $table->string('suggested_at');
         });
     }
 
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('company_lists');
+        Schema::dropIfExists('suggested_companies');
     }
 };
